@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Mora — Product Designer & Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles/kaple.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-name">Alex Mora</div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:var(--space-3)">
+      <div class="nav-status">
+        <div class="nav-status-dot"></div>
+        Let's Work
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()" title="Toggle theme">
+        <svg id="ico-moon" width="15" height="15" viewBox="0 0 15 15" fill="currentColor"><path d="M7.5 1.5A6 6 0 1 0 13.5 9a4.5 4.5 0 0 1-6-7.5z"/></svg>
+        <svg id="ico-sun" width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.4" style="display:none"><circle cx="7.5" cy="7.5" r="2.5"/><path d="M7.5 1v1.5M7.5 12.5V14M1 7.5h1.5M12.5 7.5H14M3 3l1 1M11 11l1 1M11 3l-1 1M4 11l-1 1"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-portfolio">
+    <div>
+      <div class="hero-greeting">
+        <div class="hero-greeting-line"></div>
+        Hello, I'm Alex
+      </div>
+      <h1 class="hero-portfolio-title">
+        Product Designer<br>
+        <span class="italic">& Developer</span><br>
+        based in NYC
+      </h1>
+      <p class="hero-portfolio-desc">
+        I design and build digital products that feel inevitable.
+        5 years crafting interfaces for startups and scale-ups across
+        fintech, developer tools, and consumer apps.
+      </p>
+      <div class="hero-portfolio-actions">
+        <a href="#work" class="btn btn-primary btn-lg">See my work</a>
+        <a href="#contact" class="btn btn-secondary btn-lg">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="hero-portfolio-meta">
+      <div class="hero-avatar-wrap">
+        <div class="hero-avatar-img-placeholder">
+          <img src="https://img.magnific.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740&q=80" alt="Alex Mora" class="hero-avatar">
+        </div>
+        <div class="hero-avatar-badge">
+          <span class="nav-status-dot" style="width:5px;height:5px;box-shadow:none"></span>
+          Open to opportunities
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <div class="clients-strip" style="max-width:100%;border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);padding:var(--space-5) var(--space-8)">
+    <span class="clients-label">Previously at</span>
+    <span class="client-name">Airbnb</span>
+    <span class="client-name">Stripe</span>
+    <span class="client-name">Linear</span>
+    <span class="client-name">Vercel</span>
+    <span class="client-name">Notion</span>
+  </div>
+
+  <!-- WORK -->
+  <section class="work-section" id="work">
+    <div class="work-section-header">
+      <span class="work-section-title">Selected Projects</span>
+      <span class="text-tertiary text-xs font-mono">05 works</span>
+    </div>
+
+    <div class="project-list">
+
+      <div class="project-item">
+        <div class="project-thumb">
+          <!--  -->
+          <img src="https://img.magnific.com/premium-vector/mobile-ecommerce-app-ui-design-online-gadget-store-electronics-shop-ar-checkout-interface_1116968-339.jpg?semt=ais_hybrid&w=740&q=80" alt="Orbit">
+          <div class="project-thumb-placeholder pt-1"></div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="badge badge-default">Product Design</span>
+            <span class="badge badge-default">Figma</span>
+          </div>
+          <div class="project-name">Orbit — Developer Dashboard</div>
+          <div class="project-desc">End-to-end redesign of a CI/CD dashboard used by 40k+ engineers daily.</div>
+        </div>
+        <div class="project-right">
+          <span class="project-year">2025</span>
+          <div class="project-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-thumb">
+          <img src="https://f1rst.com.au/wp-content/uploads/Essential-User-Interface-UI-Design-Tips.jpg" alt="Vault">
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="badge badge-default">UI Design</span>
+            <span class="badge badge-default">React</span>
+          </div>
+          <div class="project-name">Vault — Personal Finance App</div>
+          <div class="project-desc">Mobile-first budgeting app with smart categorization and goal tracking.</div>
+        </div>
+        <div class="project-right">
+          <span class="project-year">2024</span>
+          <div class="project-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-thumb">
+          <img src="https://fireart.studio/wp-content/uploads/2022/04/image-processing20220105-26203-d3jakl-1024x768.png" alt="Moss">
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="badge badge-default">Design System</span>
+            <span class="badge badge-info">Open Source</span>
+          </div>
+          <div class="project-name">Moss UI — Design System</div>
+          <div class="project-desc">Built a complete design system from scratch for a Series B fintech startup.</div>
+        </div>
+        <div class="project-right">
+          <span class="project-year">2024</span>
+          <div class="project-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-thumb">
+          <img src="https://s3-alpha.figma.com/hub/file/6235856616/2dcfa04b-0f3f-43e3-bb68-3a9dd899f7c3-cover.png" alt="Crest">
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="badge badge-default">Branding</span>
+            <span class="badge badge-default">Web</span>
+          </div>
+          <div class="project-name">Crest — Brand Identity & Web</div>
+          <div class="project-desc">Full brand identity and marketing site for a B2B SaaS startup.</div>
+        </div>
+        <div class="project-right">
+          <span class="project-year">2023</span>
+          <div class="project-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-thumb">
+          <img src="https://cdn.dribbble.com/userupload/47330001/file/2b4bb8da8cdfb728ad988f5ca1d3e534.png?resize=1200x&vertical=center" alt="Shelf">
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="badge badge-default">Full Stack</span>
+            <span class="badge badge-default">Next.js</span>
+          </div>
+          <div class="project-name">Shelf — Reading Tracker</div>
+          <div class="project-desc">Personal side project. A minimal book tracker with AI-powered recommendations.</div>
+        </div>
+        <div class="project-right">
+          <span class="project-year">2023</span>
+          <div class="project-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-left">
+      <p class="about-eyebrow">About me</p>
+      <h2 class="about-title">Design is how<br>I think, not just<br>what I make</h2>
+      <p class="about-body">
+        I'm a product designer and front-end developer with 5 years of experience
+        building digital products people actually enjoy using. I believe the best
+        design is invisible — it just works.
+      </p>
+      <p class="about-body">
+        When I'm not designing, I'm building side projects, writing about craft,
+        or exploring the edges of CSS. Currently open to full-time and freelance
+        opportunities.
+      </p>
+      <div class="about-stack">
+        <span class="badge badge-default">Figma</span>
+        <span class="badge badge-default">React</span>
+        <span class="badge badge-default">TypeScript</span>
+        <span class="badge badge-default">CSS / KapleCSS</span>
+        <span class="badge badge-default">Framer</span>
+        <span class="badge badge-default">Next.js</span>
+        <span class="badge badge-default">Tailwind</span>
+      </div>
+    </div>
+
+    <div class="about-right">
+      <div class="grid grid-2 gap-4">
+        <div class="about-stat-card">
+          <div class="about-stat-n">5+</div>
+          <div class="about-stat-l">Years of experience</div>
+        </div>
+        <div class="about-stat-card">
+          <div class="about-stat-n">30+</div>
+          <div class="about-stat-l">Projects delivered</div>
+        </div>
+        <div class="about-stat-card">
+          <div class="about-stat-n">12</div>
+          <div class="about-stat-l">Happy clients</div>
+        </div>
+        <div class="about-stat-card bg-accent" style="background:var(--color-accent)">
+          <div class="about-stat-n text-inverse">∞</div>
+          <div class="about-stat-l text-inverse" style="opacity:.6">Cups of coffee</div>
+        </div>
+      </div>
+
+      <div class="about-experience">
+        <div class="exp-item">
+          <div>
+            <div class="exp-role">Senior Product Designer</div>
+            <div class="exp-company">Stripe</div>
+          </div>
+          <div class="exp-period">2023 — Now</div>
+        </div>
+        <div class="exp-item">
+          <div>
+            <div class="exp-role">Product Designer</div>
+            <div class="exp-company">Linear</div>
+          </div>
+          <div class="exp-period">2021 — 2023</div>
+        </div>
+        <div class="exp-item">
+          <div>
+            <div class="exp-role">UI Designer</div>
+            <div class="exp-company">Freelance</div>
+          </div>
+          <div class="exp-period">2019 — 2021</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section class="writing-section" id="writing">
+    <div class="writing-inner">
+      <div class="writing-header">
+        <span class="writing-title">Writing</span>
+        <a href="#" class="text-secondary text-xs">All posts →</a>
+      </div>
+      <div class="writing-grid">
+        <div class="writing-card">
+          <!--  -->
+          <div class="writing-card-img wi-1"></div>
+          
+          <div class="writing-card-body">
+            <div class="writing-card-date">March 2025</div>
+            <div class="writing-card-title">The invisible design: why the best UX goes unnoticed</div>
+            <div class="writing-card-desc">Great design removes friction so thoroughly that users never stop to think about the interface at all.</div>
+          </div>
+        </div>
+        <div class="writing-card">
+          <div class="writing-card-img wi-2"></div>
+          <div class="writing-card-body">
+            <div class="writing-card-date">January 2025</div>
+            <div class="writing-card-title">How I structure my Figma files for developer handoff</div>
+            <div class="writing-card-desc">A system I've refined over 5 years that keeps design-to-dev seamless across every project size.</div>
+          </div>
+        </div>
+        <div class="writing-card">
+          <div class="writing-card-img wi-3"></div>
+          <div class="writing-card-body">
+            <div class="writing-card-date">November 2024</div>
+            <div class="writing-card-title">CSS is a design tool, not just a styling language</div>
+            <div class="writing-card-desc">Why every designer who cares about craft should at minimum understand how CSS actually works.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="contact-left">
+      <p class="contact-eyebrow">Contact</p>
+      <h2 class="contact-title">
+        Let's work<br>
+        <span class="italic">together</span>
+      </h2>
+      <p class="contact-desc">
+        I'm currently open to new opportunities — full-time, contract, or
+        consulting. If you have a project in mind, let's talk.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:alex@mora.design" class="contact-link">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <span>alex@mora.design</span>
+          <div class="contact-link-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 11L11 3M3 3h8v8"/></svg>
+          </div>
+        </a>
+        <a href="#" class="contact-link">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          </div>
+          <span>github.com/alexmora</span>
+          <div class="contact-link-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 11L11 3M3 3h8v8"/></svg>
+          </div>
+        </a>
+        <a href="#" class="contact-link">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <span>linkedin.com/in/alexmora</span>
+          <div class="contact-link-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 11L11 3M3 3h8v8"/></svg>
+          </div>
+        </a>
+        <a href="#" class="contact-link">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </div>
+          <span>twitter.com/alexmora</span>
+          <div class="contact-link-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 11L11 3M3 3h8v8"/></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <div class="contact-form-wrap">
+        <div class="contact-form-title">Send a message</div>
+        <form onsubmit="return false">
+          <div class="grid grid-2 gap-4 mb-4">
+            <div class="form-group mb-0">
+              <label class="label">Name</label>
+              <input class="input" placeholder="Your name">
+            </div>
+            <div class="form-group mb-0">
+              <label class="label">Email</label>
+              <input class="input" type="email" placeholder="your@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="label">Subject</label>
+            <input class="input" placeholder="What's this about?">
+          </div>
+          <div class="form-group">
+            <label class="label">Message</label>
+            <textarea class="textarea" rows="4" placeholder="Tell me about your project..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Send message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" style="border-top:1px solid var(--color-border)">
+    <div class="footer-name">Alex Mora</div>
+    <div class="footer-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="footer-credit">Built with <a href="#">KapleCSS</a> · © 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
