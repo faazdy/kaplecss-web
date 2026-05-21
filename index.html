@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KapleCSS — Minimal Premium CSS Framework</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./styles/kaple.css">
+  <link rel="stylesheet" href="./landing/assets/styles/style.css">
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <header>
+    <nav class="mt-3">
+      <div class="logo">
+        <a href="#" class="logo">
+          <img src="./landing/assets/imgs/kaple-logo.png" alt="KapleCSS Logo">
+          <span>KapleCSS</span>
+        </a>
+      </div>
+      <div class="nav-tags">
+        <a href="#features">Features</a>
+        <a href="#install">Install</a>
+        <a href="#contributing">Contributing</a>
+        <a href="./docs/index.html" class="btn btn-primary">Docs →</a>
+      </div>
+      <button class="burger">MENU</button>
+    </nav>
+    <aside class="mobile-menu">
+      <div class="menu-container">
+        <div class="mobile-menu-header">
+          <a href="#" class="logo">
+            <img src="./landing/assets/imgs/kaple-logo.png" alt="KapleCSS Logo">
+            <span>KapleCSS</span>
+          </a>
+          <button class="btn btn-secondary burger">X</button>
+        </div>
+        <hr>
+        <ul class="mobile-menu-tags">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#install">Install</a></li>
+          <li><a href="#contributing">Contributing</a></li>
+          <li><a href="./docs/index.html" class="btn btn-primary btn-lg">Docs →</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+          <a href="https://github.com/kaple-css/kaple-css" target="_blank" class="btn btn-primary">GitHub</a>
+        </div>
+      </div>
+    </aside>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        Beta
+      </div>
+
+      <div class="hero-icon">
+        <img src="./landing/assets/imgs/kaple-logo.png" alt="KapleCSS Logo">
+      </div>
+
+      <h1 class="display-1">
+        Minimal CSS for<br>
+        <em>Premium Websites</em>
+      </h1>
+
+      <p>
+        A design-first CSS framework built on tokens. No build steps,
+        no dependencies — link one file and ship beautiful, consistent UIs.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#install" class="btn btn-primary">Get Started</a>
+        <a href="./docs/index.html" class="btn btn-secondary">View Docs →</a>
+      </div>
+    </section>
+
+    <!-- ── INSTALL ── -->
+    <section class="install mt-6" id="install">
+      <div class="install-header">
+        <div class="install-eyebrow">Installation</div>
+        <h2 class="display-2">Three ways to<br><em>Get Started</em></h2>
+        <p>Pick the method that fits your workflow. All options deliver the full framework — no feature differences.</p>
+      </div>
+
+      <div class="cards-container">
+
+        <!-- npm -->
+        <div class="card">
+          <div class="img">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 6h18v12H3zM9 6v12M15 6v6" />
+            </svg>
+          </div>
+          <h3>Via npm</h3>
+          <p>Best for projects with a module bundler like Vite, Webpack, or Parcel. Import in your entry file.</p>
+          <div class="snippet">
+            <span class="snippet-text">npm install kaple-css</span>
+            <button class="copy-btn" onclick="copySnippet('npm install kaple-css', this)">copy</button>
+          </div>
+        </div>
+
+        <!-- CDN -->
+        <div class="card">
+          <div class="img">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3.6 9h16.8M3.6 15h16.8M12 3c-2 4-2 14 0 18M12 3c2 4 2 14 0 18" />
+            </svg>
+          </div>
+          <h3>Via CDN</h3>
+          <p>One line in your HTML head. No setup, no tooling — works instantly in any browser.</p>
+          <div class="snippet" style="flex-direction:column;align-items:flex-start;gap:5px">
+            <span style="opacity:.4;font-size:.65rem">&lt;link rel="stylesheet" href=</span>
+            <span class="snippet-text">"cdn.jsdelivr.net/npm/kaple-css/dist/kaple.min.css"</span>
+            <button class="copy-btn"
+              onclick="copySnippet('https://cdn.jsdelivr.net/npm/kaple-css/dist/kaple.min.css', this)"
+              style="align-self:flex-end">copy link</button>
+          </div>
+        </div>
+
+        <!-- Download -->
+        <div class="card">
+          <div class="img">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3v12m0 0-4-4m4 4 4-4M3 17v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2" />
+            </svg>
+          </div>
+          <h3>Download CSS File</h3>
+          <p>Download the compiled CSS file from GitHub and host it yourself for full offline control.</p>
+          <div class="snippet">
+            <span class="snippet-text">kaple.css — 52kb</span>
+            <a href="./styles/kaple.css" target="_blank" class="copy-btn" download="kaple.css">Download</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="my-6">
+
+    <!-- ── ABOUT ── -->
+    <section class="about">
+      <h2 class="display-2">About <em>KapleCSS</em></h2>
+      <p>
+        KapleCSS is a minimal premium CSS framework designed to help developers
+        create beautiful, consistent websites with ease. Built on a foundation of
+        design tokens, it provides a single source of truth for colors, typography,
+        and spacing — keeping every project cohesive from day one.
+      </p>
+    </section>
+
+    <!-- ── CONTENT TEMPLATES ── -->
+
+    <section class="image-intro">
+      <img src="https://images8.alphacoders.com/135/1354199.jpeg" alt="kaplecss preview" class="intro-image">
+    </section>
+
+    <hr class="my-6">
+
+    <!-- ── CONTRIBUTING ── -->
+    <section class="contributing" id="contributing">
+
+      <div class="contrib-left">
+        <p class="contrib-eyebrow">Open Source</p>
+        <h2 class="contrib-title">Built in public.<br><em>Grow together.</em></h2>
+        <p class="contrib-desc">
+          KapleCSS is MIT-licensed and open to contributions. Found a bug?
+          Have an idea? Send a PR or open an issue — every contribution counts.
+        </p>
+        <div class="contrib-actions">
+          <a href="https://github.com/faazdy/kaple-css" target="_blank" class="btn-white">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+            </svg>
+            View on GitHub
+          </a>
+          <a href="./docs/index.html" class="btn-ghost-white">Read Docs →</a>
+        </div>
+      </div>
+
+      <div class="contrib-cards">
+        <div class="contrib-card">
+          <div class="contrib-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"
+                fill="currentColor" />
+            </svg>
+          </div>
+          <h4>Issues & PRs</h4>
+          <p>Report bugs, suggest features, or submit pull requests on GitHub.</p>
+        </div>
+
+        <div class="contrib-card">
+          <div class="contrib-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 0 8 7 8-7" />
+            </svg>
+          </div>
+          <h4>Community</h4>
+          <p>Join the discussion and share what you've built with KapleCSS.</p>
+        </div>
+
+        <div class="contrib-card">
+          <div class="contrib-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h5" />
+            </svg>
+          </div>
+          <h4>Documentation</h4>
+          <p>Full reference for every component, token, and utility class.</p>
+        </div>
+
+        <div class="contrib-card">
+          <div class="contrib-card-icon">
+            <svg viewBox="0 0 24 24">
+              <polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.8 5.8,21 7,14.1 2,9.3 8.9,8.3" />
+            </svg>
+          </div>
+          <h4>Star it</h4>
+          <p>If KapleCSS helps you, give it a star on GitHub to support the project.</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>© 2026 KapleCSS · Built by <strong>faazdy</strong> · MIT License</p>
+    <div class="footer-links">
+      <a href="https://github.com/faazdy/kaple-css" target="_blank">GitHub</a>
+      <a href="./docs/index.html">Docs</a>
+      <a href="#">Changelog</a>
+    </div>
+  </footer>
+
+  <script src="./landing/assets/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaple CSS — Documentación</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/kaple.css" />
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- MOBILE MENU BUTTON -->
+  <button class="mobile-menu-btn" id="menuBtn" onclick="toggleSidebar()">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+      <line x1="2" y1="5" x2="14" y2="5" />
+      <line x1="2" y1="8" x2="14" y2="8" />
+      <line x1="2" y1="11" x2="14" y2="11" />
+    </svg>
+  </button>
+  <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <div class="docs-layout">
+
+    <!-- ═══════════════════════════════════════
+       SIDEBAR
+  ═══════════════════════════════════════ -->
+    <aside class="docs-sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <img src="./kaple-logo-png.png" alt="logo">
+        <span>KapleCSS</span>
+        <span class="sidebar-logo-badge">v1.0</span>
+      </div>
+
+      <div class="nav-group">
+        <p class="nav-group-title">Comenzar</p>
+        <a href="#intro" class="nav-item active"><span class="nav-dot"></span>Introducción</a>
+        <a href="#install" class="nav-item"><span class="nav-dot"></span>Instalación</a>
+        <a href="#tokens" class="nav-item"><span class="nav-dot"></span>Design Tokens</a>
+      </div>
+
+      <div class="nav-group">
+        <p class="nav-group-title">Fundamentos</p>
+        <a href="#typography" class="nav-item"><span class="nav-dot"></span>Tipografía</a>
+        <a href="#colors" class="nav-item"><span class="nav-dot"></span>Colores</a>
+        <a href="#layout" class="nav-item"><span class="nav-dot"></span>Layout & Grid</a>
+        <a href="#spacing" class="nav-item"><span class="nav-dot"></span>Espaciado</a>
+      </div>
+
+      <div class="nav-group">
+        <p class="nav-group-title">Componentes</p>
+        <a href="#buttons" class="nav-item"><span class="nav-dot"></span>Botones</a>
+        <a href="#forms" class="nav-item"><span class="nav-dot"></span>Formularios</a>
+        <a href="#cards" class="nav-item"><span class="nav-dot"></span>Cards</a>
+        <a href="#badges" class="nav-item"><span class="nav-dot"></span>Badges & Tags</a>
+        <a href="#avatar" class="nav-item"><span class="nav-dot"></span>Avatares</a>
+        <a href="#navbars" class="nav-item"><span class="nav-dot"></span>Navegación</a>
+        <a href="#tabs" class="nav-item"><span class="nav-dot"></span>Tabs</a>
+        <a href="#notices" class="nav-item"><span class="nav-dot"></span>Notices & Alerts</a>
+        <a href="#tables" class="nav-item"><span class="nav-dot"></span>Tablas</a>
+        <a href="#progress" class="nav-item"><span class="nav-dot"></span>Progress & Skeleton</a>
+        <a href="#modals" class="nav-item"><span class="nav-dot"></span>Modales</a>
+      </div>
+
+      <div class="nav-group">
+        <p class="nav-group-title">Landing Sections</p>
+        <a href="#hero" class="nav-item"><span class="nav-dot"></span>Hero</a>
+        <a href="#features" class="nav-item"><span class="nav-dot"></span>Features Grid</a>
+        <a href="#pricing-sec" class="nav-item"><span class="nav-dot"></span>Pricing</a>
+        <a href="#testimonials" class="nav-item"><span class="nav-dot"></span>Testimonios</a>
+        <a href="#cta-sec" class="nav-item"><span class="nav-dot"></span>CTA Section</a>
+        <a href="#footer-sec" class="nav-item"><span class="nav-dot"></span>Footer</a>
+      </div>
+
+      <div class="nav-group">
+        <p class="nav-group-title">Extras</p>
+        <a href="#animations" class="nav-item"><span class="nav-dot"></span>Animaciones</a>
+        <a href="#effects" class="nav-item"><span class="nav-dot"></span>Efectos Especiales</a>
+        <a href="#utilities" class="nav-item"><span class="nav-dot"></span>Utilidades</a>
+        <a href="#darkmode" class="nav-item"><span class="nav-dot"></span>Dark Mode</a>
+      </div>
+    </aside>
+
+    <!-- ═══════════════════════════════════════
+       MAIN
+  ═══════════════════════════════════════ -->
+    <div class="docs-main">
+
+      <!-- TOP BAR -->
+      <header class="docs-topbar">
+        <div class="topbar-breadcrumb">
+          Docs <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+            style="margin:0 2px">
+            <polyline points="4,2 8,6 4,10" />
+          </svg> <span id="breadcrumb-current">Introducción</span>
+        </div>
+        <div class="topbar-actions">
+          <button class="theme-btn" onclick="toggleTheme()" id="themeBtn" title="Cambiar tema">
+            <svg id="icon-moon" width="15" height="15" viewBox="0 0 15 15" fill="currentColor">
+              <path d="M7.5 1.5A6 6 0 1 0 13.5 9a4.5 4.5 0 0 1-6-7.5z" />
+            </svg>
+            <svg id="icon-sun" width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor"
+              stroke-width="1.4" style="display:none">
+              <circle cx="7.5" cy="7.5" r="2.5" />
+              <path d="M7.5 1v1.5M7.5 12.5V14M1 7.5h1.5M12.5 7.5H14M3 3l1 1M11 11l1 1M11 3l-1 1M4 11l-1 1" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="docs-content">
+
+        <!-- ═══ HERO ═══ -->
+        <div class="docs-hero" id="intro">
+          <div class="docs-hero-badge"><span></span> v1.0.0 — Beta</div>
+          <h1 class="docs-hero-title">KapleCSS</h1>
+          <p class="docs-hero-desc">Un framework CSS minimalista y premium para construir interfaces limpias, modernas y
+            consistentes.</p>
+          <div class="docs-hero-meta">
+            <div class="docs-hero-stat"><strong>~50kb</strong>Minificado</div>
+            <div class="docs-hero-stat"><strong>0</strong>Dependencias</div>
+            <div class="docs-hero-stat"><strong>20+</strong>Componentes</div>
+            <div class="docs-hero-stat"><strong>100%</strong>CSS Variables</div>
+          </div>
+        </div>
+
+        <!-- ═══ INSTALACIÓN ═══ -->
+        <section class="doc-section" id="install">
+          <p class="section-label">Comenzar</p>
+          <h2 class="section-title">Instalación</h2>
+          <p class="section-desc">Tres formas de usar Kaple CSS. La más sencilla: un link en tu HTML.</p>
+
+          <p
+            style="font-size:var(--text-sm);font-weight:var(--weight-medium);margin-bottom:var(--space-2);margin-top:var(--space-6);">
+            A través de NPM (Recomendado para proyectos grandes)</p>
+          <div class="preview-block">
+            <div class="preview-label">NPM</div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="t"># Instalar vía npm</span>
+<span class="k">npm</span> install kaple-css
+
+<span class="t"># En tu archivo principal de JS/TS</span>
+<span class="k">import</span> <span class="s">'kaple-css/dist/kaple.css'</span>;
+
+<span class="t"># Si usas Sass, en tu archivo SCSS</span>
+<span class="k">@use</span> <span class="s">"kaple-css/dist/kaple.css"</span>;
+</code></pre>
+            </div>
+          </div>
+          
+
+          <p
+            style="font-size:var(--text-sm);font-weight:var(--weight-medium);margin-bottom:var(--space-2);margin-top:var(--space-6);">
+            Vía CDN (Rápido para prototipos)</p>
+          <div class="preview-block">
+            <div class="preview-label">HTML</div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="t">&lt;!-- unpkg --&gt;</span>
+<span class="k">&lt;link</span> <span class="a">rel</span>=<span class="s">"stylesheet"</span> <span class="a">href</span>=<span class="s">"https://unpkg.com/kaple-css/dist/kaple.css"</span><span class="k">&gt;</span>
+
+<span class="t">&lt;!-- o jsdelivr --&gt;</span>
+<span class="k">&lt;link</span> <span class="a">rel</span>=<span class="s">"stylesheet"</span> <span class="a">href</span>=<span class="s">"https://cdn.jsdelivr.net/npm/kaple-css/dist/kaple.css"</span><span class="k">&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <p
+            style="font-size:var(--text-sm);font-weight:var(--weight-medium);margin-bottom:var(--space-2);margin-top:var(--space-4);">
+            Archivo local</p>
+          <div class="preview-block">
+            <div class="preview-label">HTML</div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="t">&lt;!-- En tu &lt;head&gt; --&gt;</span>
+<span class="k">&lt;link</span> <span class="a">rel</span>=<span class="s">"preconnect"</span> <span class="a">href</span>=<span class="s">"https://fonts.googleapis.com"</span><span class="k">&gt;</span>
+<span class="k">&lt;link</span> <span class="a">href</span>=<span class="s">"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"</span> <span class="a">rel</span>=<span class="s">"stylesheet"</span><span class="k">&gt;</span>
+<span class="k">&lt;link</span> <span class="a">rel</span>=<span class="s">"stylesheet"</span> <span class="a">href</span>=<span class="s">"kaple.css"</span><span class="k">&gt;</span>
+
+<span class="t">&lt;!-- Sobrescribe la fuente --&gt;</span>
+<span class="k">&lt;style&gt;</span>
+  <span class="a">:root</span> { <span class="a">--font-sans</span>: <span class="s">'Inter'</span>, system-ui, sans-serif; }
+<span class="k">&lt;/style&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <p
+            style="font-size:var(--text-sm);font-weight:var(--weight-medium);margin-bottom:var(--space-2);margin-top:var(--space-6);">
+            Estructura mínima de página</p>
+          <div class="preview-block">
+            <div class="preview-label">HTML</div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;!DOCTYPE html&gt;</span>
+<span class="k">&lt;html</span> <span class="a">lang</span>=<span class="s">"es"</span> <span class="a">data-theme</span>=<span class="s">"light"</span><span class="k">&gt;</span>
+<span class="k">&lt;head&gt;</span>
+  <span class="k">&lt;meta</span> <span class="a">charset</span>=<span class="s">"UTF-8"</span><span class="k">&gt;</span>
+  <span class="k">&lt;meta</span> <span class="a">name</span>=<span class="s">"viewport"</span> <span class="a">content</span>=<span class="s">"width=device-width, initial-scale=1.0"</span><span class="k">&gt;</span>
+  <span class="k">&lt;link</span> <span class="a">rel</span>=<span class="s">"stylesheet"</span> <span class="a">href</span>=<span class="s">"kaple.css"</span><span class="k">&gt;</span>
+<span class="k">&lt;/head&gt;</span>
+<span class="k">&lt;body&gt;</span>
+  <span class="t">&lt;!-- Tu contenido aquí --&gt;</span>
+<span class="k">&lt;/body&gt;</span>
+<span class="k">&lt;/html&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ DESIGN TOKENS ═══ -->
+        <section class="doc-section" id="tokens">
+          <p class="section-label">Fundamentos</p>
+          <h2 class="section-title">Design Tokens</h2>
+          <p class="section-desc">Todos los valores del sistema están definidos como CSS Custom Properties en
+            <code>:root</code>. Cambia un token y el sistema entero reacciona.</p>
+
+          <div class="callout callout-info">
+            <strong>Cómo personalizar:</strong> Sobrescribe cualquier variable en tu propio CSS después de importar el
+            framework. No necesitas modificar el archivo fuente.
+          </div>
+
+          <div class="preview-block">
+            <div class="preview-label">CSS — Personalizar tokens</div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="t">/* En tu CSS, después de importar kaple.css */</span>
+<span class="a">:root</span> {
+  <span class="t">/* Cambiar color de acento a azul */</span>
+  <span class="a">--color-accent</span>:       <span class="s">#2563eb</span>;
+  <span class="a">--color-accent-hover</span>: <span class="s">#1d4ed8</span>;
+  <span class="a">--color-accent-subtle</span>:<span class="s">rgba(37, 99, 235, 0.08)</span>;
+
+  <span class="t">/* Cambiar radios a más redondeado */</span>
+  <span class="a">--radius-sm</span>: <span class="s">8px</span>;
+  <span class="a">--radius-md</span>: <span class="s">12px</span>;
+  <span class="a">--radius-lg</span>: <span class="s">16px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div style="overflow-x:auto">
+            <table class="prop-table">
+              <thead>
+                <tr>
+                  <th>Token</th>
+                  <th>Valor por defecto</th>
+                  <th>Uso</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>--color-accent</code></td>
+                  <td><code>#000000</code></td>
+                  <td>Color principal de acción (botones, links, focus)</td>
+                </tr>
+                <tr>
+                  <td><code>--color-bg</code></td>
+                  <td><code>#ffffff</code></td>
+                  <td>Fondo base de la página</td>
+                </tr>
+                <tr>
+                  <td><code>--color-text-primary</code></td>
+                  <td><code>#0a0a0a</code></td>
+                  <td>Texto principal</td>
+                </tr>
+                <tr>
+                  <td><code>--color-border</code></td>
+                  <td><code>rgba(0,0,0,0.08)</code></td>
+                  <td>Bordes sutiles</td>
+                </tr>
+                <tr>
+                  <td><code>--font-sans</code></td>
+                  <td><code>'Geist', 'Inter', system-ui</code></td>
+                  <td>Fuente principal</td>
+                </tr>
+                <tr>
+                  <td><code>--font-mono</code></td>
+                  <td><code>'Fira Code', monospace</code></td>
+                  <td>Fuente para código</td>
+                </tr>
+                <tr>
+                  <td><code>--radius-md</code></td>
+                  <td><code>8px</code></td>
+                  <td>Radio de borde estándar</td>
+                </tr>
+                <tr>
+                  <td><code>--shadow-md</code></td>
+                  <td><code>0 4px 6px ...</code></td>
+                  <td>Sombra estándar</td>
+                </tr>
+                <tr>
+                  <td><code>--transition-base</code></td>
+                  <td><code>150ms ease</code></td>
+                  <td>Transición estándar</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <hr class="doc-divider">
+
+        <!-- ═══ TIPOGRAFÍA ═══ -->
+        <section class="doc-section" id="typography">
+          <p class="section-label">Fundamentos</p>
+          <h2 class="section-title">Tipografía</h2>
+          <p class="section-desc">Escala tipográfica modular con clases de tamaño, peso, tracking y leading. Los
+            headings tienen estilos opinionados por defecto.</p>
+
+          <div class="preview-block">
+            <div class="preview-label">Escala de headings</div>
+            <div class="preview-area col" style="gap:var(--space-5)">
+              <div style="width:100%;border-bottom:1px solid var(--color-border);padding-bottom:var(--space-4)">
+                <p
+                  style="font-size:10px;color:var(--color-text-tertiary);margin-bottom:var(--space-2);font-family:var(--font-mono)">
+                  .display-1 — 60px</p>
+                <p class="display-1" style="line-height:1">Display One</p>
+              </div>
+              <div style="width:100%">
+                <p
+                  style="font-size:10px;color:var(--color-text-tertiary);margin-bottom:var(--space-1);font-family:var(--font-mono)">
+                  .display-2 — 48px</p>
+                <p class="display-2">Display Two</p>
+              </div>
+              <div style="width:100%;display:flex;flex-direction:column;gap:var(--space-2)">
+                <div style="display:flex;align-items:baseline;gap:var(--space-4)">
+                  <span
+                    style="font-size:10px;color:var(--color-text-tertiary);font-family:var(--font-mono);width:100px">h1
+                    — 36px</span>
+                  <h1>Heading One</h1>
+                </div>
+                <div style="display:flex;align-items:baseline;gap:var(--space-4)">
+                  <span
+                    style="font-size:10px;color:var(--color-text-tertiary);font-family:var(--font-mono);width:100px">h2
+                    — 30px</span>
+                  <h2>Heading Two</h2>
+                </div>
+                <div style="display:flex;align-items:baseline;gap:var(--space-4)">
+                  <span
+                    style="font-size:10px;color:var(--color-text-tertiary);font-family:var(--font-mono);width:100px">h3
+                    — 24px</span>
+                  <h3>Heading Three</h3>
+                </div>
+                <div style="display:flex;align-items:baseline;gap:var(--space-4)">
+                  <span
+                    style="font-size:10px;color:var(--color-text-tertiary);font-family:var(--font-mono);width:100px">h4
+                    — 20px</span>
+                  <h4>Heading Four</h4>
+                </div>
+                <div style="display:flex;align-items:baseline;gap:var(--space-4)">
+                  <span
+                    style="font-size:10px;color:var(--color-text-tertiary);font-family:var(--font-mono);width:100px">h5
+                    — 18px</span>
+                  <h5>Heading Five</h5>
+                </div>
+                <div style="display:flex;align-items:baseline;gap:var(--space-4)">
+                  <span
+                    style="font-size:10px;color:var(--color-text-tertiary);font-family:var(--font-mono);width:100px">p —
+                    16px</span>
+                  <p>Párrafo de texto normal con <code>leading-relaxed</code> por defecto.</p>
+                </div>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;h1</span> <span class="a">class</span>=<span class="s">"display-1"</span><span class="k">&gt;</span>Display One<span class="k">&lt;/h1&gt;</span>
+<span class="k">&lt;h1&gt;</span>Heading One<span class="k">&lt;/h1&gt;</span>
+<span class="k">&lt;h2&gt;</span>Heading Two<span class="k">&lt;/h2&gt;</span>
+<span class="k">&lt;p&gt;</span>Texto de párrafo normal.<span class="k">&lt;/p&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <div class="preview-block">
+            <div class="preview-label">Clases de utilidad tipográfica</div>
+            <div class="preview-area col" style="gap:var(--space-3)">
+              <p><span class="font-bold">font-bold</span> — <span class="font-semibold">font-semibold</span> — <span
+                  class="font-medium">font-medium</span> — <span class="font-normal">font-normal</span></p>
+              <p class="tracking-tight text-2xl font-bold">tracking-tight — menos espacio entre letras</p>
+              <p class="tracking-wide uppercase text-xs">tracking-wide + uppercase — ideal para labels</p>
+              <p class="text-secondary">text-secondary — color secundario</p>
+              <p class="text-tertiary text-sm">text-tertiary — metadatos, hints</p>
+              <p class="text-truncate" style="max-width:200px">text-truncate — texto cortado con ellipsis en texto muy
+                largo</p>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;p</span> <span class="a">class</span>=<span class="s">"font-bold tracking-tight text-2xl"</span><span class="k">&gt;</span>...<span class="k">&lt;/p&gt;</span>
+<span class="k">&lt;p</span> <span class="a">class</span>=<span class="s">"text-secondary text-sm"</span><span class="k">&gt;</span>...<span class="k">&lt;/p&gt;</span>
+<span class="k">&lt;p</span> <span class="a">class</span>=<span class="s">"uppercase tracking-wide text-xs"</span><span class="k">&gt;</span>LABEL<span class="k">&lt;/p&gt;</span>
+<span class="k">&lt;p</span> <span class="a">class</span>=<span class="s">"text-truncate"</span><span class="k">&gt;</span>Texto largo...<span class="k">&lt;/p&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ COLORES ═══ -->
+        <section class="doc-section" id="colors">
+          <h2 class="section-title">Colores</h2>
+          <p class="section-desc">Paleta semántica con soporte automático de dark mode. Usa los tokens, no valores
+            hardcodeados.</p>
+          <div class="token-grid">
+            <div class="token-swatch">
+              <div class="token-color" style="background:#0a0a0a"></div>
+              <div class="token-info">
+                <p class="token-name">--color-text-primary</p>
+                <p class="token-value">#0a0a0a</p>
+              </div>
+            </div>
+            <div class="token-swatch">
+              <div class="token-color" style="background:#6b6b6b"></div>
+              <div class="token-info">
+                <p class="token-name">--color-text-secondary</p>
+                <p class="token-value">#6b6b6b</p>
+              </div>
+            </div>
+            <div class="token-swatch">
+              <div class="token-color" style="background:#a3a3a3"></div>
+              <div class="token-info">
+                <p class="token-name">--color-text-tertiary</p>
+                <p class="token-value">#a3a3a3</p>
+              </div>
+            </div>
+            <div class="token-swatch">
+              <div class="token-color" style="background:#f5f5f5;border-bottom:1px solid #eee"></div>
+              <div class="token-info">
+                <p class="token-name">--color-bg-muted</p>
+                <p class="token-value">#f5f5f5</p>
+              </div>
+            </div>
+            <div class="token-swatch">
+              <div class="token-color" style="background:#16a34a"></div>
+              <div class="token-info">
+                <p class="token-name">--color-success</p>
+                <p class="token-value">#16a34a</p>
+              </div>
+            </div>
+            <div class="token-swatch">
+              <div class="token-color" style="background:#ca8a04"></div>
+              <div class="token-info">
+                <p class="token-name">--color-warning</p>
+                <p class="token-value">#ca8a04</p>
+              </div>
+            </div>
+            <div class="token-swatch">
+              <div class="token-color" style="background:#dc2626"></div>
+              <div class="token-info">
+                <p class="token-name">--color-danger</p>
+                <p class="token-value">#dc2626</p>
+              </div>
+            </div>
+            <div class="token-swatch">
+              <div class="token-color" style="background:#2563eb"></div>
+              <div class="token-info">
+                <p class="token-name">--color-info</p>
+                <p class="token-value">#2563eb</p>
+              </div>
+            </div>
+          </div>
+          <div class="preview-block" style="margin-top:var(--space-6)">
+            <div class="preview-label">Clases de color de texto</div>
+            <div class="preview-area col">
+              <p class="text-primary font-medium">text-primary — texto principal</p>
+              <p class="text-secondary">text-secondary — soporte</p>
+              <p class="text-tertiary text-sm">text-tertiary — metadatos</p>
+              <p class="text-success font-medium">text-success</p>
+              <p class="text-warning font-medium">text-warning</p>
+              <p class="text-danger font-medium">text-danger</p>
+              <p class="text-info font-medium">text-info</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ GRID ═══ -->
+        <section class="doc-section" id="layout">
+          <h2 class="section-title">Layout & Grid</h2>
+          <p class="section-desc">Sistema de grid CSS con clases de columnas fijas y auto-fit responsivo. Combina con
+            flexbox para layouts complejos.</p>
+
+          <div class="preview-block">
+            <div class="preview-label">Grids de columnas fijas</div>
+            <div class="preview-area col" style="gap:var(--space-3)">
+              <div class="grid grid-1 gap-2" style="width:100%">
+                <div class="g-demo">grid-1</div>
+              </div>
+              <div class="grid grid-2 gap-2" style="width:100%">
+                <div class="g-demo">1</div>
+                <div class="g-demo">2</div>
+              </div>
+              <div class="grid grid-3 gap-2" style="width:100%">
+                <div class="g-demo">1</div>
+                <div class="g-demo">2</div>
+                <div class="g-demo">3</div>
+              </div>
+              <div class="grid grid-4 gap-2" style="width:100%">
+                <div class="g-demo">1</div>
+                <div class="g-demo">2</div>
+                <div class="g-demo">3</div>
+                <div class="g-demo">4</div>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"grid grid-3 gap-6"</span><span class="k">&gt;</span>
+  <span class="k">&lt;div&gt;</span>Col 1<span class="k">&lt;/div&gt;</span>
+  <span class="k">&lt;div&gt;</span>Col 2<span class="k">&lt;/div&gt;</span>
+  <span class="k">&lt;div&gt;</span>Col 3<span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <div class="preview-block">
+            <div class="preview-label">Col-span en grid-12</div>
+            <div class="preview-area col" style="gap:var(--space-2)">
+              <div class="grid grid-12 gap-2" style="width:100%">
+                <div class="g-demo col-span-4">col-span-4</div>
+                <div class="g-demo col-span-8">col-span-8</div>
+              </div>
+              <div class="grid grid-12 gap-2" style="width:100%">
+                <div class="g-demo col-span-6">col-span-6</div>
+                <div class="g-demo col-span-3">col-span-3</div>
+                <div class="g-demo col-span-3">col-span-3</div>
+              </div>
+              <div class="grid grid-12 gap-2" style="width:100%">
+                <div class="g-demo col-span-full">col-span-full</div>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"grid grid-12 gap-4"</span><span class="k">&gt;</span>
+  <span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"col-span-4"</span><span class="k">&gt;</span>Sidebar<span class="k">&lt;/div&gt;</span>
+  <span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"col-span-8"</span><span class="k">&gt;</span>Main<span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <div class="preview-block">
+            <div class="preview-label">Grid auto-fit responsivo</div>
+            <div class="preview-area">
+              <div class="grid grid-auto gap-3" style="width:100%">
+                <div class="g-demo">auto</div>
+                <div class="g-demo">auto</div>
+                <div class="g-demo">auto</div>
+                <div class="g-demo">auto</div>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="t">/* Se ajusta solo: mín 240px por columna */</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"grid grid-auto gap-4"</span><span class="k">&gt;</span>...<span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"grid grid-auto-sm gap-4"</span><span class="k">&gt;</span>...<span class="k">&lt;/div&gt;</span> <span class="t">// mín 160px</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"grid grid-auto-lg gap-4"</span><span class="k">&gt;</span>...<span class="k">&lt;/div&gt;</span> <span class="t">// mín 320px</span></code></pre>
+            </div>
+          </div>
+
+          <div class="preview-block">
+            <div class="preview-label">Flexbox utilities</div>
+            <div class="preview-area col" style="gap:var(--space-4)">
+              <div class="flex items-center gap-3"
+                style="width:100%;background:var(--color-bg-muted);border-radius:var(--radius-sm);padding:var(--space-2)">
+                <div class="g-demo" style="flex:none;width:60px">A</div>
+                <div class="g-demo flex-1">flex-1 (crece)</div>
+                <div class="g-demo" style="flex:none;width:60px">C</div>
+              </div>
+              <div class="flex justify-between items-center"
+                style="width:100%;background:var(--color-bg-muted);border-radius:var(--radius-sm);padding:var(--space-2)">
+                <div class="g-demo" style="width:80px">justify</div>
+                <div class="g-demo" style="width:80px">between</div>
+                <div class="g-demo" style="width:80px">items</div>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"flex items-center gap-3"</span><span class="k">&gt;</span>...<span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"flex justify-between items-center"</span><span class="k">&gt;</span>...<span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"flex flex-col gap-4"</span><span class="k">&gt;</span>...<span class="k">&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <hr class="doc-divider">
+
+        <!-- ═══ BOTONES ═══ -->
+        <section class="doc-section" id="buttons">
+          <p class="section-label">Componentes</p>
+          <h2 class="section-title">Botones</h2>
+          <p class="section-desc">5 variantes, 5 tamaños, estados disabled y versión block. Todos tienen
+            micro-interacción de spring al hacer click.</p>
+
+          <div class="preview-block">
+            <div class="preview-label">Variantes</div>
+            <div class="preview-area">
+              <button class="btn btn-primary">Primary</button>
+              <button class="btn btn-secondary">Secondary</button>
+              <button class="btn btn-outline">Outline</button>
+              <button class="btn btn-ghost">Ghost</button>
+              <button class="btn btn-danger">Danger</button>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"btn btn-primary"</span><span class="k">&gt;</span>Primary<span class="k">&lt;/button&gt;</span>
+<span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"btn btn-secondary"</span><span class="k">&gt;</span>Secondary<span class="k">&lt;/button&gt;</span>
+<span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"btn btn-outline"</span><span class="k">&gt;</span>Outline<span class="k">&lt;/button&gt;</span>
+<span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"btn btn-ghost"</span><span class="k">&gt;</span>Ghost<span class="k">&lt;/button&gt;</span>
+<span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"btn btn-danger"</span><span class="k">&gt;</span>Danger<span class="k">&lt;/button&gt;</span>
+<span class="t">&lt;!-- También funciona con &lt;a&gt; --&gt;</span>
+<span class="k">&lt;a</span> <span class="a">href</span>=<span class="s">"#"</span> <span class="a">class</span>=<span class="s">"btn btn-primary"</span><span class="k">&gt;</span>Link<span class="k">&lt;/a&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <div class="preview-block">
+            <div class="preview-label">Tamaños</div>
+            <div class="preview-area" style="align-items:center">
+              <button class="btn btn-primary btn-xs">XSmall</button>
+              <button class="btn btn-primary btn-sm">Small</button>
+              <button class="btn btn-primary">Base</button>
+              <button class="btn btn-primary btn-lg">Large</button>
+              <button class="btn btn-primary btn-xl">XLarge</button>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"btn btn-primary btn-xs"</span><span class="k">&gt;</span>XSmall<span class="k">&lt;/button&gt;</span>
+<span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"btn btn-primary btn-sm"</span><span class="k">&gt;</span>Small<span class="k">&lt;/button&gt;</span>
+<span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"btn btn-primary"</span><span class="k">&gt;</span>Base<span class="k">&lt;/button&gt;</span>
+<span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"btn btn-primary btn-lg"</span><span class="k">&gt;</span>Large<span class="k">&lt;/button&gt;</span>
+<span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"btn btn-primary btn-xl"</span><span class="k">&gt;</span>XLarge<span class="k">&lt;/button&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <div class="preview-block">
+            <div class="preview-label">Estados especiales</div>
+            <div class="preview-area col" style="gap:var(--space-3)">
+              <div class="flex gap-3 flex-wrap">
+                <button class="btn btn-primary" disabled>Disabled</button>
+                <button class="btn btn-secondary" disabled>Disabled</button>
+              </div>
+              <button class="btn btn-primary btn-block">Block — ancho completo</button>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"btn btn-primary"</span> <span class="a">disabled</span><span class="k">&gt;</span>Disabled<span class="k">&lt;/button&gt;</span>
+<span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"btn btn-primary btn-block"</span><span class="k">&gt;</span>Block<span class="k">&lt;/button&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ FORMS ═══ -->
+        <section class="doc-section" id="forms">
+          <h2 class="section-title">Formularios</h2>
+          <p class="section-desc">Inputs, textarea, select, checkbox, radio y toggle. Todos comparten el mismo lenguaje
+            visual y estados de focus/error.</p>
+
+          <div class="preview-block">
+            <div class="preview-label">Input, Textarea, Select</div>
+            <div class="preview-area col" style="max-width:400px;gap:var(--space-4)">
+              <div class="form-group" style="margin:0;width:100%">
+                <label class="label">Email</label>
+                <input class="input" type="email" placeholder="tu@email.com">
+                <p class="form-hint">Nunca compartiremos tu email.</p>
+              </div>
+              <div class="form-group" style="margin:0;width:100%">
+                <label class="label">Mensaje</label>
+                <textarea class="textarea" placeholder="Escribe algo..."></textarea>
+              </div>
+              <div class="form-group" style="margin:0;width:100%">
+                <label class="label">País</label>
+                <select class="select">
+                  <option>Colombia</option>
+                  <option>México</option>
+                  <option>España</option>
+                </select>
+              </div>
+              <div style="width:100%">
+                <label class="label">Estado de error</label>
+                <input class="input input-error" value="valor inválido">
+                <p class="form-error">Este campo es requerido.</p>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"form-group"</span><span class="k">&gt;</span>
+  <span class="k">&lt;label</span> <span class="a">class</span>=<span class="s">"label"</span><span class="k">&gt;</span>Email<span class="k">&lt;/label&gt;</span>
+  <span class="k">&lt;input</span> <span class="a">class</span>=<span class="s">"input"</span> <span class="a">type</span>=<span class="s">"email"</span> <span class="a">placeholder</span>=<span class="s">"tu@email.com"</span><span class="k">&gt;</span>
+  <span class="k">&lt;p</span> <span class="a">class</span>=<span class="s">"form-hint"</span><span class="k">&gt;</span>Hint de ayuda<span class="k">&lt;/p&gt;</span>
+<span class="k">&lt;/div&gt;</span>
+
+<span class="t">&lt;!-- Error state --&gt;</span>
+<span class="k">&lt;input</span> <span class="a">class</span>=<span class="s">"input input-error"</span><span class="k">&gt;</span>
+<span class="k">&lt;p</span> <span class="a">class</span>=<span class="s">"form-error"</span><span class="k">&gt;</span>Error message<span class="k">&lt;/p&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <div class="preview-block">
+            <div class="preview-label">Checkbox, Radio, Toggle</div>
+            <div class="preview-area col" style="gap:var(--space-4)">
+              <div class="flex gap-6 flex-wrap">
+                <label class="checkbox"><input type="checkbox" checked> Acepto términos</label>
+                <label class="checkbox"><input type="checkbox"> Suscribirme</label>
+              </div>
+              <div class="flex gap-6 flex-wrap">
+                <label class="radio"><input type="radio" name="plan" checked> Plan Free</label>
+                <label class="radio"><input type="radio" name="plan"> Plan Pro</label>
+                <label class="radio"><input type="radio" name="plan"> Enterprise</label>
+              </div>
+              <div class="flex gap-6 flex-wrap items-center">
+                <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                <span class="text-sm text-secondary">Activado</span>
+                <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+                <span class="text-sm text-secondary">Desactivado</span>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;label</span> <span class="a">class</span>=<span class="s">"checkbox"</span><span class="k">&gt;</span>
+  <span class="k">&lt;input</span> <span class="a">type</span>=<span class="s">"checkbox"</span><span class="k">&gt;</span> Opción
+<span class="k">&lt;/label&gt;</span>
+
+<span class="k">&lt;label</span> <span class="a">class</span>=<span class="s">"radio"</span><span class="k">&gt;</span>
+  <span class="k">&lt;input</span> <span class="a">type</span>=<span class="s">"radio"</span> <span class="a">name</span>=<span class="s">"plan"</span><span class="k">&gt;</span> Free
+<span class="k">&lt;/label&gt;</span>
+
+<span class="k">&lt;label</span> <span class="a">class</span>=<span class="s">"toggle"</span><span class="k">&gt;</span>
+  <span class="k">&lt;input</span> <span class="a">type</span>=<span class="s">"checkbox"</span><span class="k">&gt;</span>
+  <span class="k">&lt;span</span> <span class="a">class</span>=<span class="s">"toggle-slider"</span><span class="k">&gt;&lt;/span&gt;</span>
+<span class="k">&lt;/label&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ CARDS ═══ -->
+        <section class="doc-section" id="cards">
+          <h2 class="section-title">Cards</h2>
+          <p class="section-desc">Contenedor con header, body y footer opcionales. Añade <code>card-hover</code> para el
+            efecto de elevación al pasar el mouse.</p>
+          <div class="preview-block">
+            <div class="preview-label">Anatomía de card</div>
+            <div class="preview-area" style="gap:var(--space-4);align-items:flex-start;flex-wrap:wrap">
+              <div class="card" style="width:260px">
+                <div class="card-header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="font-semibold text-sm">Card con header</h4>
+                    <span class="badge badge-success badge-dot">Live</span>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p class="text-sm text-secondary">Contenido del body. Padding estándar de 20px en todos los lados.</p>
+                </div>
+                <div class="card-footer">
+                  <button class="btn btn-secondary btn-sm">Acción</button>
+                </div>
+              </div>
+              <div class="card card-hover" style="width:240px;cursor:pointer">
+                <div class="card-body">
+                  <p class="font-semibold text-sm mb-2">card-hover</p>
+                  <p class="text-sm text-secondary">Pasa el mouse para ver la elevación y transición de sombra.</p>
+                </div>
+              </div>
+              <div class="card bg-accent" style="width:200px">
+                <div class="card-body" style="padding:var(--space-6)">
+                  <p class="font-bold text-2xl tracking-tight" style="color:var(--color-text-inverse)">bg-accent</p>
+                  <p class="text-sm" style="color:rgba(255,255,255,0.7);margin-top:var(--space-1)">Card invertida</p>
+                </div>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"card card-hover"</span><span class="k">&gt;</span>
+  <span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"card-header"</span><span class="k">&gt;</span>Header<span class="k">&lt;/div&gt;</span>
+  <span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"card-body"</span><span class="k">&gt;</span>Body<span class="k">&lt;/div&gt;</span>
+  <span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"card-footer"</span><span class="k">&gt;</span>Footer<span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ BADGES ═══ -->
+        <section class="doc-section" id="badges">
+          <h2 class="section-title">Badges & Tags</h2>
+          <div class="preview-block">
+            <div class="preview-label">Variantes de badge</div>
+            <div class="preview-area" style="flex-wrap:wrap">
+              <span class="badge badge-default">Default</span>
+              <span class="badge badge-success">Success</span>
+              <span class="badge badge-warning">Warning</span>
+              <span class="badge badge-danger">Danger</span>
+              <span class="badge badge-info">Info</span>
+              <span class="badge badge-accent">Accent</span>
+            </div>
+            <div class="preview-area" style="flex-wrap:wrap;border-top:1px solid var(--color-border)">
+              <span class="badge badge-default badge-dot">Default</span>
+              <span class="badge badge-success badge-dot">Active</span>
+              <span class="badge badge-warning badge-dot">Pending</span>
+              <span class="badge badge-danger badge-dot">Error</span>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;span</span> <span class="a">class</span>=<span class="s">"badge badge-success"</span><span class="k">&gt;</span>Success<span class="k">&lt;/span&gt;</span>
+<span class="k">&lt;span</span> <span class="a">class</span>=<span class="s">"badge badge-danger"</span><span class="k">&gt;</span>Danger<span class="k">&lt;/span&gt;</span>
+<span class="t">&lt;!-- Con dot indicador --&gt;</span>
+<span class="k">&lt;span</span> <span class="a">class</span>=<span class="s">"badge badge-success badge-dot"</span><span class="k">&gt;</span>Active<span class="k">&lt;/span&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ AVATARES ═══ -->
+        <section class="doc-section" id="avatar">
+          <h2 class="section-title">Avatares</h2>
+          <div class="preview-block">
+            <div class="preview-label">Tamaños y grupo</div>
+            <div class="preview-area" style="align-items:center;gap:var(--space-4)">
+              <div class="avatar avatar-xs">XS</div>
+              <div class="avatar avatar-sm">SM</div>
+              <div class="avatar avatar-md">MD</div>
+              <div class="avatar avatar-lg">LG</div>
+              <div class="avatar avatar-xl">XL</div>
+              <div class="avatar-group" style="margin-left:var(--space-4)">
+                <div class="avatar avatar-sm">A</div>
+                <div class="avatar avatar-sm">B</div>
+                <div class="avatar avatar-sm">C</div>
+                <div class="avatar avatar-sm" style="background:var(--color-bg-muted);font-size:10px">+4</div>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"avatar avatar-md"</span><span class="k">&gt;</span>AB<span class="k">&lt;/div&gt;</span>
+
+<span class="t">&lt;!-- Avatar grupo --&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"avatar-group"</span><span class="k">&gt;</span>
+  <span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"avatar avatar-sm"</span><span class="k">&gt;</span>A<span class="k">&lt;/div&gt;</span>
+  <span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"avatar avatar-sm"</span><span class="k">&gt;</span>B<span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ TABS ═══ -->
+        <section class="doc-section" id="tabs">
+          <h2 class="section-title">Tabs</h2>
+          <div class="preview-block">
+            <div class="preview-label">Tabs con línea</div>
+            <div class="preview-area col" style="gap:var(--space-6)">
+              <div class="tabs" id="tabs1">
+                <button class="tab active" onclick="setTab('tabs1',this)">Overview</button>
+                <button class="tab" onclick="setTab('tabs1',this)">Analytics</button>
+                <button class="tab" onclick="setTab('tabs1',this)">Deployments</button>
+                <button class="tab" onclick="setTab('tabs1',this)">Settings</button>
+              </div>
+              <div class="tabs-pill" id="tabs2">
+                <button class="tab active" onclick="setTab('tabs2',this)">Todos</button>
+                <button class="tab" onclick="setTab('tabs2',this)">Activos</button>
+                <button class="tab" onclick="setTab('tabs2',this)">Pausados</button>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="t">&lt;!-- Línea inferior --&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"tabs"</span><span class="k">&gt;</span>
+  <span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"tab active"</span><span class="k">&gt;</span>Overview<span class="k">&lt;/button&gt;</span>
+  <span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"tab"</span><span class="k">&gt;</span>Analytics<span class="k">&lt;/button&gt;</span>
+<span class="k">&lt;/div&gt;</span>
+
+<span class="t">&lt;!-- Pill tabs --&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"tabs-pill"</span><span class="k">&gt;</span>
+  <span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"tab active"</span><span class="k">&gt;</span>Todos<span class="k">&lt;/button&gt;</span>
+  <span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"tab"</span><span class="k">&gt;</span>Activos<span class="k">&lt;/button&gt;</span>
+<span class="k">&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ NOTICES ═══ -->
+        <section class="doc-section" id="notices">
+          <h2 class="section-title">Notices & Alerts</h2>
+          <div class="preview-block">
+            <div class="preview-label">Variantes</div>
+            <div class="preview-area col" style="gap:var(--space-2)">
+              <div class="notice notice-default" style="width:100%">ℹ <strong>Default</strong> — Información general o
+                estado neutro.</div>
+              <div class="notice notice-success" style="width:100%">✓ <strong>Success</strong> — Operación completada
+                correctamente.</div>
+              <div class="notice notice-warning" style="width:100%">⚠ <strong>Warning</strong> — Revisa esta
+                configuración antes de continuar.</div>
+              <div class="notice notice-danger" style="width:100%">✕ <strong>Danger</strong> — Acción destructiva o
+                error crítico.</div>
+              <div class="notice notice-info" style="width:100%">💡 <strong>Info</strong> — Tu plan se renueva el 1 de
+                enero.</div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"notice notice-success"</span><span class="k">&gt;</span>✓ Guardado correctamente.<span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"notice notice-danger"</span><span class="k">&gt;</span>✕ Error al procesar.<span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"notice notice-warning"</span><span class="k">&gt;</span>⚠ Revisa tu configuración.<span class="k">&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ TABLES ═══ -->
+        <section class="doc-section" id="tables">
+          <h2 class="section-title">Tablas</h2>
+          <div class="preview-block">
+            <div class="preview-label">Tabla con hover</div>
+            <div class="preview-area" style="padding:0">
+              <div class="table-wrapper" style="width:100%;border-radius:0;border:none">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Proyecto</th>
+                      <th>Estado</th>
+                      <th>Equipo</th>
+                      <th>Fecha</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-medium">dashboard-v2</td>
+                      <td><span class="badge badge-success badge-dot">Production</span></td>
+                      <td>
+                        <div class="avatar-group">
+                          <div class="avatar avatar-xs">A</div>
+                          <div class="avatar avatar-xs">B</div>
+                        </div>
+                      </td>
+                      <td class="text-secondary text-sm">Hace 2 min</td>
+                    </tr>
+                    <tr>
+                      <td class="font-medium">api-gateway</td>
+                      <td><span class="badge badge-warning badge-dot">Staging</span></td>
+                      <td>
+                        <div class="avatar avatar-xs">X</div>
+                      </td>
+                      <td class="text-secondary text-sm">Hace 1h</td>
+                    </tr>
+                    <tr>
+                      <td class="font-medium">auth-service</td>
+                      <td><span class="badge badge-default">Paused</span></td>
+                      <td>
+                        <div class="avatar avatar-xs">Z</div>
+                      </td>
+                      <td class="text-secondary text-sm">Hace 3d</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"table-wrapper"</span><span class="k">&gt;</span>
+  <span class="k">&lt;table</span> <span class="a">class</span>=<span class="s">"table table-hover"</span><span class="k">&gt;</span>
+    <span class="k">&lt;thead&gt;&lt;tr&gt;</span>
+      <span class="k">&lt;th&gt;</span>Nombre<span class="k">&lt;/th&gt;</span>
+      <span class="k">&lt;th&gt;</span>Estado<span class="k">&lt;/th&gt;</span>
+    <span class="k">&lt;/tr&gt;&lt;/thead&gt;</span>
+    <span class="k">&lt;tbody&gt;&lt;tr&gt;</span>
+      <span class="k">&lt;td&gt;</span>dashboard-v2<span class="k">&lt;/td&gt;</span>
+      <span class="k">&lt;td&gt;&lt;span</span> <span class="a">class</span>=<span class="s">"badge badge-success badge-dot"</span><span class="k">&gt;</span>Live<span class="k">&lt;/span&gt;&lt;/td&gt;</span>
+    <span class="k">&lt;/tr&gt;&lt;/tbody&gt;</span>
+  <span class="k">&lt;/table&gt;</span>
+<span class="k">&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ PROGRESS ═══ -->
+        <section class="doc-section" id="progress">
+          <h2 class="section-title">Progress & Skeleton</h2>
+          <div class="preview-block">
+            <div class="preview-label">Progress bars</div>
+            <div class="preview-area col" style="gap:var(--space-4)">
+              <div style="width:100%">
+                <div class="flex justify-between text-sm mb-2"><span class="text-secondary">Almacenamiento</span><span
+                    class="font-medium">42%</span></div>
+                <div class="progress progress-lg">
+                  <div class="progress-bar" style="width:42%"></div>
+                </div>
+              </div>
+              <div style="width:100%">
+                <div class="flex justify-between text-sm mb-2"><span class="text-secondary">CPU</span><span
+                    class="font-medium">78%</span></div>
+                <div class="progress">
+                  <div class="progress-bar" style="width:78%"></div>
+                </div>
+              </div>
+              <div style="width:100%">
+                <div class="flex justify-between text-xs mb-1"><span class="text-tertiary">Mínimo
+                    (progress-sm)</span><span class="text-tertiary">20%</span></div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar" style="width:20%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"progress"</span><span class="k">&gt;</span>
+  <span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"progress-bar"</span> <span class="a">style</span>=<span class="s">"width: 65%"</span><span class="k">&gt;&lt;/div&gt;</span>
+<span class="k">&lt;/div&gt;</span>
+<span class="t">&lt;!-- Variantes de altura --&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"progress progress-sm"</span><span class="k">&gt;</span>...<span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"progress progress-lg"</span><span class="k">&gt;</span>...<span class="k">&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <div class="preview-block">
+            <div class="preview-label">Skeleton loading</div>
+            <div class="preview-area">
+              <div class="card" style="width:280px">
+                <div class="card-body">
+                  <div class="flex gap-3 items-center mb-4">
+                    <div class="skeleton" style="width:40px;height:40px;border-radius:50%"></div>
+                    <div style="flex:1">
+                      <div class="skeleton skeleton-text" style="width:70%;height:14px"></div>
+                      <div class="skeleton skeleton-text" style="width:50%;height:10px;margin-top:4px"></div>
+                    </div>
+                  </div>
+                  <div class="skeleton skeleton-text"></div>
+                  <div class="skeleton skeleton-text" style="width:80%"></div>
+                  <div class="skeleton skeleton-text" style="width:60%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="t">&lt;!-- Texto skeleton --&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"skeleton skeleton-text"</span><span class="k">&gt;&lt;/div&gt;</span>
+
+<span class="t">&lt;!-- Imagen/avatar skeleton --&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"skeleton"</span> <span class="a">style</span>=<span class="s">"width:40px;height:40px;border-radius:50%"</span><span class="k">&gt;&lt;/div&gt;</span>
+
+<span class="t">&lt;!-- Bloque skeleton --&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"skeleton"</span> <span class="a">style</span>=<span class="s">"height:120px;border-radius:8px"</span><span class="k">&gt;&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ MODALES ═══ -->
+        <section class="doc-section" id="modals">
+          <h2 class="section-title">Modales</h2>
+          <div class="preview-block">
+            <div class="preview-label">Preview estático de modal</div>
+            <div class="preview-area muted-bg" style="justify-content:center;padding:var(--space-6)">
+              <div class="modal" style="position:relative;box-shadow:var(--shadow-xl)">
+                <div class="modal-header">
+                  <h4 class="font-semibold text-sm">Confirmar eliminación</h4>
+                  <button class="btn btn-ghost btn-xs" style="padding:var(--space-1)">✕</button>
+                </div>
+                <div class="modal-body">
+                  <p class="text-sm text-secondary">Esta acción no se puede deshacer. Se eliminará permanentemente el
+                    proyecto y todos sus datos.</p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-ghost btn-sm">Cancelar</button>
+                  <button class="btn btn-danger btn-sm">Eliminar</button>
+                </div>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="t">&lt;!-- Overlay con blur --&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"overlay"</span><span class="k">&gt;</span>
+  <span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"modal"</span><span class="k">&gt;</span>
+    <span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"modal-header"</span><span class="k">&gt;</span>
+      <span class="k">&lt;h4&gt;</span>Título<span class="k">&lt;/h4&gt;</span>
+      <span class="k">&lt;button</span> <span class="a">onclick</span>=<span class="s">"closeModal()"</span><span class="k">&gt;</span>✕<span class="k">&lt;/button&gt;</span>
+    <span class="k">&lt;/div&gt;</span>
+    <span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"modal-body"</span><span class="k">&gt;</span>Contenido<span class="k">&lt;/div&gt;</span>
+    <span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"modal-footer"</span><span class="k">&gt;</span>
+      <span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"btn btn-ghost"</span><span class="k">&gt;</span>Cancelar<span class="k">&lt;/button&gt;</span>
+      <span class="k">&lt;button</span> <span class="a">class</span>=<span class="s">"btn btn-primary"</span><span class="k">&gt;</span>Confirmar<span class="k">&lt;/button&gt;</span>
+    <span class="k">&lt;/div&gt;</span>
+  <span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <div class="preview-area"
+            style="border:1px solid var(--color-border);border-radius:var(--radius-xl);margin-top:0;padding:var(--space-4);">
+            <button class="btn btn-secondary" onclick="document.getElementById('demo-modal').style.display='flex'">Abrir
+              modal demo</button>
+          </div>
+        </section>
+
+        <hr class="doc-divider">
+
+        <!-- ═══ ANIMACIONES ═══ -->
+        <section class="doc-section" id="animations">
+          <p class="section-label">Extras</p>
+          <h2 class="section-title">Animaciones</h2>
+          <p class="section-desc">Clases de animación listas para usar. Combina <code>animate</code> con
+            <code>delay-N</code> para efectos de entrada en cascada.</p>
+
+          <div class="preview-block">
+            <div class="preview-label">Entrada en cascada — recarga la página para ver</div>
+            <div class="preview-area" style="gap:var(--space-3)">
+              <div class="card card-body animate delay-1" style="padding:var(--space-3) var(--space-4)">
+                <p class="text-sm font-medium">animate delay-1</p>
+              </div>
+              <div class="card card-body animate delay-2" style="padding:var(--space-3) var(--space-4)">
+                <p class="text-sm font-medium">animate delay-2</p>
+              </div>
+              <div class="card card-body animate delay-3" style="padding:var(--space-3) var(--space-4)">
+                <p class="text-sm font-medium">animate delay-3</p>
+              </div>
+              <div class="card card-body animate delay-4" style="padding:var(--space-3) var(--space-4)">
+                <p class="text-sm font-medium">animate delay-4</p>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="t">&lt;!-- fade-up de entrada --&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"animate delay-1"</span><span class="k">&gt;</span>Aparece primero<span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"animate delay-2"</span><span class="k">&gt;</span>Aparece segundo<span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"animate delay-3"</span><span class="k">&gt;</span>Aparece tercero<span class="k">&lt;/div&gt;</span>
+
+<span class="t">&lt;!-- Otras clases de animación --&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"fade-in"</span><span class="k">&gt;</span>Fade puro<span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"slide-up"</span><span class="k">&gt;</span>Slide spring<span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"scale-in"</span><span class="k">&gt;</span>Scale from 95%<span class="k">&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <div class="preview-block">
+            <div class="preview-label">Scroll reveal — patrón con IntersectionObserver</div>
+            <div class="code-block" style="border-top:none">
+              <pre><code><span class="t">// Revelar elementos al entrar en viewport</span>
+<span class="k">const</span> observer = <span class="k">new</span> IntersectionObserver(<span class="s">(entries)</span> => {
+  entries.forEach(e => {
+    <span class="k">if</span> (e.isIntersecting) {
+      e.target.style.opacity = <span class="s">'1'</span>;
+      e.target.style.transform = <span class="s">'translateY(0)'</span>;
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: <span class="s">0.1</span> });
+
+document.querySelectorAll(<span class="s">'.card, .feature-card'</span>).forEach(el => {
+  el.style.opacity = <span class="s">'0'</span>;
+  el.style.transform = <span class="s">'translateY(12px)'</span>;
+  el.style.transition = <span class="s">'opacity 0.5s ease, transform 0.5s ease'</span>;
+  observer.observe(el);
+});</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ EFECTOS ═══ -->
+        <section class="doc-section" id="effects">
+          <h2 class="section-title">Efectos Especiales</h2>
+
+          <div class="preview-block">
+            <div class="preview-label">Glass, Gradient Text, Code Window</div>
+            <div class="preview-area"
+              style="gap:var(--space-4);align-items:stretch;background:linear-gradient(135deg,#f5f5f5,#e8e8e8)">
+              <div class="glass rounded-xl p-6 relative" style="flex:1">
+                <h4 class="font-bold mb-1">Glassmorphism</h4>
+                <p class="text-secondary text-sm">Blur de fondo con borde semi-transparente.</p>
+              </div>
+              <div class="card p-6 flex items-center justify-center" style="flex:none">
+                <p class="display-2 text-gradient">Premium</p>
+              </div>
+            </div>
+            <div class="code-block">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="t">&lt;!-- Glass effect --&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"glass rounded-xl p-6"</span><span class="k">&gt;</span>...<span class="k">&lt;/div&gt;</span>
+
+<span class="t">&lt;!-- Gradient text --&gt;</span>
+<span class="k">&lt;h1</span> <span class="a">class</span>=<span class="s">"display-1 text-gradient"</span><span class="k">&gt;</span>Premium<span class="k">&lt;/h1&gt;</span>
+
+<span class="t">&lt;!-- Animated gradient background --&gt;</span>
+<span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"gradient-animated"</span><span class="k">&gt;</span>...<span class="k">&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ DARK MODE ═══ -->
+        <section class="doc-section" id="darkmode">
+          <h2 class="section-title">Dark Mode</h2>
+          <p class="section-desc">Soporte nativo por sistema operativo (<code>prefers-color-scheme</code>) y toggle
+            manual con <code>data-theme</code>.</p>
+
+          <div class="preview-block">
+            <div class="preview-label">Toggle manual con JS</div>
+            <div class="code-block" style="border-top:none">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="t">// Toggle entre light y dark</span>
+<span class="k">function</span> toggleTheme() {
+  <span class="k">const</span> html = document.documentElement;
+  <span class="k">const</span> isDark = html.getAttribute(<span class="s">'data-theme'</span>) === <span class="s">'dark'</span>;
+  html.setAttribute(<span class="s">'data-theme'</span>, isDark ? <span class="s">'light'</span> : <span class="s">'dark'</span>);
+  <span class="t">// Opcional: persistir en localStorage</span>
+  localStorage.setItem(<span class="s">'theme'</span>, isDark ? <span class="s">'light'</span> : <span class="s">'dark'</span>);
+}
+
+<span class="t">// Restaurar preferencia al cargar</span>
+<span class="k">const</span> saved = localStorage.getItem(<span class="s">'theme'</span>);
+<span class="k">if</span> (saved) document.documentElement.setAttribute(<span class="s">'data-theme'</span>, saved);</code></pre>
+            </div>
+          </div>
+
+          <div class="preview-block">
+            <div class="preview-label">Sobrescribir tokens en dark</div>
+            <div class="code-block" style="border-top:none">
+              <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+              <pre><code><span class="t">/* Personalizar colores solo en dark mode */</span>
+<span class="a">[data-theme="dark"]</span> {
+  <span class="a">--color-accent</span>:       <span class="s">#60a5fa</span>; <span class="t">/* azul en dark */</span>
+  <span class="a">--color-accent-hover</span>: <span class="s">#93c5fd</span>;
+}</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ UTILITIES ═══ -->
+        <section class="doc-section" id="utilities">
+          <h2 class="section-title">Utilidades</h2>
+          <p class="section-desc">Referencia rápida de todas las clases de utilidad disponibles.</p>
+
+          <div style="overflow-x:auto">
+            <table class="prop-table">
+              <thead>
+                <tr>
+                  <th>Categoría</th>
+                  <th>Clases</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Display</strong></td>
+                  <td><code>flex</code> <code>inline-flex</code> <code>grid</code> <code>block</code>
+                    <code>inline-block</code> <code>hidden</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Position</strong></td>
+                  <td><code>relative</code> <code>absolute</code> <code>fixed</code> <code>sticky</code>
+                    <code>inset-0</code> <code>top-0</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Overflow</strong></td>
+                  <td><code>overflow-hidden</code> <code>overflow-auto</code> <code>overflow-x-auto</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Z-index</strong></td>
+                  <td><code>z-10</code> <code>z-50</code> <code>z-100</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Width/Height</strong></td>
+                  <td><code>w-full</code> <code>w-auto</code> <code>h-full</code> <code>h-screen</code>
+                    <code>min-h-screen</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Cursor</strong></td>
+                  <td><code>cursor-pointer</code> <code>select-none</code> <code>pointer-events-none</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Opacity</strong></td>
+                  <td><code>opacity-0</code> <code>opacity-50</code> <code>opacity-75</code> <code>opacity-100</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Blur</strong></td>
+                  <td><code>blur-sm</code> <code>blur</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Transition</strong></td>
+                  <td><code>transition</code> <code>transition-colors</code> <code>transition-transform</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Transform</strong></td>
+                  <td><code>scale-95</code> <code>scale-100</code> <code>scale-105</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Responsive hide</strong></td>
+                  <td><code>hide-sm</code> <code>hide-md</code> <code>hide-lg</code> <code>show-sm</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Accesibilidad</strong></td>
+                  <td><code>sr-only</code> <code>focus-ring</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </div><!-- /docs-content -->
+    </div><!-- /docs-main -->
+  </div><!-- /docs-layout -->
+
+  <!-- MODAL DEMO -->
+  <div id="demo-modal" class="overlay" style="display:none" onclick="if(event.target===this)this.style.display='none'">
+    <div class="modal scale-in">
+      <div class="modal-header">
+        <h4 class="font-semibold text-sm">Modal en acción</h4>
+        <button class="btn btn-ghost btn-xs"
+          onclick="document.getElementById('demo-modal').style.display='none'">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="text-sm text-secondary">Este es un modal funcional con overlay de blur. Haz click fuera o en la X para
+          cerrar.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost btn-sm"
+          onclick="document.getElementById('demo-modal').style.display='none'">Cancelar</button>
+        <button class="btn btn-primary btn-sm"
+          onclick="document.getElementById('demo-modal').style.display='none'">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ─── THEME ─── */
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      document.getElementById('icon-moon').style.display = isDark ? 'block' : 'none';
+      document.getElementById('icon-sun').style.display = isDark ? 'none' : 'block';
+      localStorage.setItem('kaple-theme', isDark ? 'light' : 'dark');
+    }
+    const saved = localStorage.getItem('kaple-theme');
+    if (saved === 'dark') toggleTheme();
+
+    /* ─── SIDEBAR MOBILE ─── */
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('open');
+    }
+
+    /* ─── TABS DEMO ─── */
+    function setTab(parentId, el) {
+      document.querySelectorAll(`#${parentId} .tab`).forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    /* ─── COPY CODE ─── */
+    function copyCode(btn) {
+      const pre = btn.closest('.code-block').querySelector('pre');
+      const text = pre.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = '✓ Copiado';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
+      });
+    }
+
+    /* ─── ACTIVE NAV ON SCROLL ─── */
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.doc-section, .docs-hero');
+    const breadcrumb = document.getElementById('breadcrumb-current');
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navItems.forEach(n => {
+            const active = n.getAttribute('href') === `#${id}`;
+            n.classList.toggle('active', active);
+            if (active && breadcrumb) breadcrumb.textContent = n.textContent.trim();
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    sections.forEach(s => io.observe(s));
+  </script>
+</body>
+
+</html>

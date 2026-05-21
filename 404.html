@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found · KapleCSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@1,400;1,600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./landing/assets/styles/404.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <a href="index.html" class="nav-logo">
+      <img src="./landing/assets/imgs/kaple-logo.png" style="width:28px;height:28px;border-radius:7px" alt="KapleCSS Logo">
+      KapleCSS
+    </a>
+    <a href="index.html" class="nav-back">
+      <svg viewBox="0 0 14 14"><polyline points="9,2 4,7 9,12"/></svg>
+      Back to home
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <div class="error-pill">
+      <span class="error-pill-dot"></span>
+      HTTP 404 — Not Found
+    </div>
+
+    <div class="error-number">4<em>0</em>4</div>
+
+    <h1 class="error-title">Page not found</h1>
+    <p class="error-desc">
+      The page you're looking for doesn't exist or has been moved.
+      Check the URL or head back home.
+    </p>
+
+    <div class="actions">
+      <a href="index.html" class="btn-home">
+        <svg viewBox="0 0 14 14"><path d="M1 7L7 1l6 6M2.5 5.5V13h3.5V9h2v4h3.5V5.5"/></svg>
+        Go home
+      </a>
+      <a href="./docs/index.html" class="btn-docs">Read the docs →</a>
+    </div>
+
+    <div class="suggestions">
+      <p class="suggestions-label">Maybe you were looking for</p>
+      <div class="suggestions-list">
+        <a href="index.html" class="suggestion-item">
+          <span>Landing — KapleCSS home</span>
+          <svg viewBox="0 0 14 14"><polyline points="5,2 10,7 5,12"/></svg>
+        </a>
+        <a href="./docs/index.html" class="suggestion-item">
+          <span>Documentation</span>
+          <svg viewBox="0 0 14 14"><polyline points="5,2 10,7 5,12"/></svg>
+        </a>
+        <a href="https://github.com/faazdy/kaple-css" target="_blank" class="suggestion-item">
+          <span>GitHub Repository</span>
+          <svg viewBox="0 0 14 14"><polyline points="5,2 10,7 5,12"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 KapleCSS · MIT License</p>
+    <a href="https://github.com/faazdy/kaple-css" target="_blank">GitHub</a>
+  </footer>
+
+</body>
+</html>
