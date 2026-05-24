@@ -1,3 +1,5 @@
+@import '../../styles/kaple.css';
+
 :root {
     --font-sans: 'Inter', system-ui, sans-serif;
 }
